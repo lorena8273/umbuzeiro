@@ -82,7 +82,7 @@ nav a:hover {
             rgba(31, 48, 27, 0.65),
             rgba(31, 48, 27, 0.15)
         ),
-        url("img/umbuzeiro.jpg");
+        url("umbuzeiro.jpg");
     background-size: cover;
     background-position: center;
 }
