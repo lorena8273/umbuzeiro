@@ -1,0 +1,567 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #faf8f1;
+    color: #29351f;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* =========================
+   MENU
+========================= */
+header {
+    width: 100%;
+    background-color: #263b25;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    width: min(1150px, 100%);
+    margin: auto;
+    padding: 18px clamp(16px, 4vw, 25px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+nav h2 {
+    color: #f3d77a;
+    font-size: clamp(20px, 3vw, 24px);
+    flex-shrink: 0;
+}
+
+nav ul {
+    display: flex;
+    gap: clamp(10px, 2.5vw, 28px);
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: clamp(13px, 1.8vw, 15px);
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #f3d77a;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+    min-height: clamp(430px, 72vh, 620px);
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(31, 48, 27, 0.95),
+            rgba(31, 48, 27, 0.65),
+            rgba(31, 48, 27, 0.15)
+        ),
+        url("img/umbuzeiro.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-text {
+    width: min(1150px, 100%);
+    margin: auto;
+    padding: clamp(45px, 8vw, 60px) clamp(16px, 4vw, 25px);
+    color: white;
+}
+
+.subtitulo {
+    color: #f3d77a;
+    text-transform: uppercase;
+    letter-spacing: clamp(1px, 0.5vw, 3px);
+    font-size: clamp(11px, 1.8vw, 14px);
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: clamp(44px, 8vw, 78px);
+    line-height: 1;
+    margin: 15px 0 25px;
+}
+
+.hero-text > p:not(.subtitulo) {
+    max-width: 550px;
+    font-size: clamp(16px, 2.2vw, 19px);
+    margin-bottom: 35px;
+}
+
+.botao {
+    display: inline-block;
+    max-width: 100%;
+    background-color: #d69b3c;
+    color: white;
+    padding: 13px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.botao:hover {
+    background-color: #b97925;
+    transform: translateY(-3px);
+}
+
+/* =========================
+   SOBRE
+========================= */
+.sobre {
+    width: min(1100px, 100%);
+    margin: auto;
+    padding: clamp(60px, 9vw, 100px) clamp(16px, 4vw, 25px);
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    gap: clamp(35px, 6vw, 70px);
+    align-items: center;
+}
+
+.numero {
+    color: #c78b32;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.sobre h2,
+.fruto h2,
+.conservacao h2 {
+    font-size: clamp(30px, 4.5vw, 42px);
+    line-height: 1.15;
+    margin: 10px 0 25px;
+}
+
+.sobre p {
+    margin-bottom: 15px;
+    color: #59614e;
+}
+
+.destaque {
+    min-width: 0;
+    background-color: #e7ead5;
+    padding: clamp(25px, 4vw, 40px);
+    border-radius: 25px;
+    border-left: 6px solid #c78b32;
+}
+
+.destaque span {
+    font-size: 45px;
+}
+
+.destaque h3 {
+    font-size: clamp(21px, 3vw, 24px);
+    margin: 10px 0;
+}
+
+/* =========================
+   SEÇÕES
+========================= */
+.secao {
+    width: min(1100px, 100%);
+    margin: auto;
+    padding: clamp(60px, 8vw, 90px) clamp(16px, 4vw, 25px);
+}
+
+.titulo-secao {
+    max-width: 700px;
+    margin-bottom: clamp(35px, 5vw, 50px);
+}
+
+.titulo-secao > span {
+    color: #c78b32;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.titulo-secao h2 {
+    font-size: clamp(30px, 4.5vw, 42px);
+    line-height: 1.15;
+    margin: 10px 0 15px;
+}
+
+.titulo-secao p {
+    color: #69705f;
+}
+
+/* =========================
+   CARDS
+========================= */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(16px, 3vw, 30px);
+}
+
+.card {
+    min-width: 0;
+    background-color: white;
+    padding: clamp(16px, 2.5vw, 20px);
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(35, 48, 29, 0.08);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+}
+
+.icone {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.imagens-caracteristicas {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    margin: 0 auto;
+    border-radius: 18px;
+}
+
+.card h3 {
+    font-size: clamp(19px, 2.5vw, 22px);
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #687060;
+    font-size: 15px;
+}
+
+/* =========================
+   ADAPTAÇÕES
+========================= */
+.adaptacoes {
+    background-color: #263b25;
+    color: white;
+    padding: clamp(60px, 8vw, 90px) clamp(16px, 4vw, 25px);
+}
+
+.adaptacoes .titulo-secao {
+    width: min(1100px, 100%);
+    margin: auto auto clamp(35px, 5vw, 50px);
+}
+
+.adaptacoes .titulo-secao h2 {
+    color: white;
+}
+
+.adaptacoes .titulo-secao p {
+    color: #d5dccb;
+}
+
+.adaptacao-grid {
+    width: min(1100px, 100%);
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(16px, 3vw, 25px);
+}
+
+.adaptacao {
+    min-width: 0;
+    padding: clamp(20px, 3vw, 30px);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 18px;
+}
+
+.adaptacao-numero {
+    color: #f3d77a;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.adaptacao h3 {
+    font-size: clamp(20px, 2.8vw, 23px);
+    margin-bottom: 12px;
+}
+
+.adaptacao p {
+    color: #d5dccb;
+}
+
+/* =========================
+   IMPORTÂNCIA
+========================= */
+.importancia-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(16px, 3vw, 25px);
+}
+
+.importancia-card {
+    min-width: 0;
+    background-color: #e9eadb;
+    padding: clamp(22px, 3.5vw, 35px);
+    border-radius: 20px;
+}
+
+.importancia-card span {
+    font-size: 40px;
+}
+
+.importancia-card h3 {
+    font-size: clamp(20px, 2.8vw, 23px);
+    margin: 15px 0;
+}
+
+.importancia-card p {
+    color: #626a59;
+}
+
+/* =========================
+   FRUTO
+========================= */
+.fruto {
+    min-height: clamp(420px, 65vh, 500px);
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(246, 232, 194, 0.97),
+            rgba(246, 232, 194, 0.85)
+        );
+}
+
+.fruto-texto {
+    width: min(1100px, 100%);
+    margin: auto;
+    padding: clamp(60px, 8vw, 80px) clamp(16px, 4vw, 25px);
+}
+
+.fruto-texto > p {
+    max-width: 600px;
+    color: #626a59;
+}
+
+.fruto-info {
+    display: flex;
+    gap: 40px;
+    margin-top: 35px;
+}
+
+.fruto-info div {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.fruto-info strong {
+    font-size: 30px;
+}
+
+.imagem-umbu {
+    display: block;
+    width: min(100%, 500px);
+    border-radius: 18px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================
+   AMEAÇAS
+========================= */
+.ameacas {
+    width: min(1100px, 100%);
+    margin: auto;
+    padding: clamp(60px, 8vw, 90px) clamp(16px, 4vw, 25px);
+}
+
+.ameacas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(16px, 3vw, 20px);
+}
+
+.ameacas-grid div {
+    min-width: 0;
+    padding: clamp(20px, 3vw, 30px);
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+}
+
+.ameacas-grid h3 {
+    margin-bottom: 10px;
+}
+
+.ameacas-grid p {
+    color: #69705f;
+}
+
+/* =========================
+   CONSERVAÇÃO
+========================= */
+.conservacao {
+    background-color: #e7ead5;
+}
+
+.conservacao > div {
+    width: min(1100px, 100%);
+    margin: auto;
+    padding: clamp(60px, 8vw, 100px) clamp(16px, 4vw, 25px);
+}
+
+.conservacao p {
+    max-width: 700px;
+    color: #59614e;
+    margin-bottom: 18px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    background-color: #1d2c1c;
+    color: white;
+    text-align: center;
+    padding: 50px clamp(16px, 4vw, 20px);
+}
+
+footer h2 {
+    color: #f3d77a;
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: #cbd2c2;
+}
+
+footer .fonte {
+    margin-top: 20px;
+    font-size: 13px;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+/* Tablets e telas médias */
+@media (max-width: 900px) {
+    nav {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+
+    .sobre {
+        grid-template-columns: 1fr;
+    }
+
+    .cards,
+    .adaptacao-grid,
+    .importancia-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Celulares e telas horizontais estreitas */
+@media (max-width: 600px) {
+    nav {
+        padding-top: 14px;
+        padding-bottom: 14px;
+    }
+
+    nav ul {
+        width: 100%;
+        gap: 8px 14px;
+    }
+
+    nav li {
+        text-align: center;
+    }
+
+    .hero {
+        min-height: 470px;
+        background-position: 60% center;
+    }
+
+    .hero-text > p:not(.subtitulo) {
+        margin-bottom: 25px;
+    }
+
+    .cards,
+    .adaptacao-grid,
+    .importancia-grid,
+    .ameacas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .destaque {
+        border-left-width: 4px;
+    }
+
+    .fruto-info {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .imagem-umbu {
+        width: 100%;
+        max-width: 500px;
+    }
+}
+
+/* Celulares muito estreitos */
+@media (max-width: 360px) {
+    nav ul {
+        gap: 6px 10px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: 430px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .botao {
+        padding: 11px 18px;
+        font-size: 14px;
+    }
+}
+
+/*
+   IMPORTANTE:
+   Não usamos uma regra específica para orientation: landscape.
+   A largura disponível é o que determina o número de colunas.
+   Isso evita overflow em celulares deitados.
+*/
